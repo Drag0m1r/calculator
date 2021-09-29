@@ -19,7 +19,7 @@ $bedrag = $_REQUEST['itemPrice'] * $amount;
 
 
 function calculate($btwCodes , $amount , $bedrag , $btwCode){
-    var_dump($btwCode, $amount, $bedrag);
+    // var_dump($btwCode, $amount, $bedrag);
     if($amount < 1000){
         $discount = 0;
     }
@@ -37,8 +37,7 @@ function calculate($btwCodes , $amount , $bedrag , $btwCode){
     $valueDiscount = $bedrag/100 * $discount;
     $total = $bedrag - $valueDiscount;
     $incBTW = $total/100 * $btwCodes[$btwCode];
-    var_dump($incBTW);
-    echo $incBTW;
+    echo "Het bedrag is: " . $incBTW;
 }
 calculate($btwCodes, $amount, $bedrag, $btwCode);
 
