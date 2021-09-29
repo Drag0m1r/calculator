@@ -5,8 +5,25 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
 </head>
-<body>
-    
+<body class="flex items-center justify-center my-24">
+    <form action="" class="p-4 border rounded shadow bg-gray-500">
+        <div class="text-2xl mb-4 text-center">Calculator</div>
+        <label for="itemAmount">Hoeveelheid</label>
+        <input type="number" name="itemAmount" id="" class="w-full p-1 my-2"> <br>
+        <label for="itemPrice">item prijs</label>
+        <input type="number" name="itemPrice" id="" class="w-full p-1 my-2"> <br>
+        <label for="country">Land</label>
+        <select name="country" id="" class="w-full p-1 my-2">
+            <option value="BE">BE</option>
+            <option value="FR">FR</option>
+            <option value="DU">DU</option>
+            <option value="LU">LU</option>
+            <option value="NL">NL</option>
+        </select>
+
+        <input type="submit" class="w-full p-1 my-2" value="Berekenen">
+    </form>
 </body>
 </html>
