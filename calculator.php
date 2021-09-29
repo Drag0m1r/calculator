@@ -1,11 +1,11 @@
 <?php
 
 $btwCodes= [
-    "NL" => 21,
-    "BE" => 21,
-    "LU" => 15,
-    "FR" => 20,
-    "DU" => 16,
+    "NL" => 121,
+    "BE" => 121,
+    "LU" => 115,
+    "FR" => 120,
+    "DU" => 116,
 ];
 
 $btwCode = $_REQUEST['country'];
@@ -13,18 +13,18 @@ $btwCode = $_REQUEST['country'];
 
 $amount = $_REQUEST['itemAmount'];
 
-$bedrag = $_REQUEST['itemPrice'];
+$bedrag = $_REQUEST['itemPrice'] * $amount;
+
 
 
 
 function calculate($btwCodes , $amount , $bedrag , $btwCode){
     var_dump($btwCode, $amount, $bedrag);
-    $total = $bedrag * $amount;
     if($amount < 1000){
         $discount = 0;
     }
     
-    if($amount >= 1000 && $amount < 6000){
+    if($amount >= 1000 && $amount < 5000){
         $discount = 3;
     }elseif($amount >=5000 && $amount < 7000){
         $discount = 5;
@@ -34,8 +34,8 @@ function calculate($btwCodes , $amount , $bedrag , $btwCode){
         $discount = 10;
     }
     
-    $valueDiscount = $total/100 * $discount;
-    $total = $total - $discount;
+    $valueDiscount = $bedrag/100 * $discount;
+    $total = $bedrag - $valueDiscount;
     $incBTW = $total/100 * $btwCodes[$btwCode];
     var_dump($incBTW);
     echo $incBTW;
